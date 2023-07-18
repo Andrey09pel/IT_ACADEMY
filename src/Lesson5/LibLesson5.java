@@ -55,9 +55,9 @@ public class LibLesson5 {
     }
 
     private static boolean numeralOrNot(String valye) {
-        if (valye == null || valye.isEmpty()) {
-            return false;
-        }
+       // if (valye == null || valye.isEmpty()) {
+       //     return false;
+       // }
         int commaCount = 0;
         for (int i = 0; i < valye.length(); i++) {
 
@@ -75,30 +75,39 @@ public class LibLesson5 {
     public static void sb() {
         double number;
         //так как массивы одинаковые без фанатизма
-        for (int i = 0; i < masterArr.length; i++) {
-            for (int j = 0; j < masterArr[i].length; j++) {
-                if  (numeralOrNot(masterArr[i][j])== false){
+
+        for (int i = 0; i <= masterArr.length-1; i++) {
+           // System.out.println("i = "+i);
+          //  System.out.println("masterArr[i].length = "+masterArr[i]);
+            for (int j = 0; j <= masterArr[i].length-1; j++) {
+              if  (numeralOrNot(masterArr[i][j])== false){
+                    //System.out.println(masterArr[i][j]);
                    masterSb.append(masterArr[i][j].toString().substring(2, 4));
                 }
-                if (numeralOrNot(slavArr[i][j])== false){
-                    number = Double.parseDouble(slavArr[i][j].substring(slavArr[i][j].indexOf(".")).substring(1));
-                    if (!((number/0.7) > 1)) {
-                        slavArr[i][j]= String.valueOf(Math.floor(Double.parseDouble(slavArr[i][j])));
+                if (numeralOrNot(slavArr[i][j])== true){
+                   // System.out.println(Double.valueOf(slavArr[i][j])%1);
+                    number = Double.valueOf(slavArr[i][j])%1;
+                 if (!((number/0.7) > 1)) {
+                     slavSb.append(String.valueOf(Math.floor(Double.parseDouble(slavArr[i][j]))));
                     } else {
-                        slavArr[i][j]= String.valueOf(Math.ceil(Double.parseDouble(slavArr[i][j])));
+                     slavSb.append(String.valueOf(Math.ceil(Double.parseDouble(slavArr[i][j]))));
                     }
-                    for(i = 0; i < slavArr.length; i++){
-                        System.out.println(i);
-                        if(i < slavArr.length - 1){
-                            System.out.println("_");
-                        }
-                    }
+                    //for(i = 0; i < slavArr.length; i++){
+                      //  System.out.println(i);
+                      //  if(i < slavArr.length - 1){
+                       //     System.out.println("_");
+                       // }
+                   // }
                 }
+
             }
         }
         System.out.println("masterSb = " + masterSb);
         System.out.println("slavSb = " + slavSb);
         }
+
+
+
     public static void newArr() {
 
         // главная
