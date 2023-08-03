@@ -17,10 +17,10 @@ public class Start {
         Path orderShit = Paths.get("orderShit.txt");        // лист заказов
         Path productList = Paths.get("productList.txt");    // лист товаров
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
-        int var ;
+        int var =10  ;
         String fileName;
         String text = null;
-       // do {
+        do {
             System.out.print("Действие: \n " + "1 - Вывести список товаров \n"
                                             + "2 - Вывести список заказов\n"
                                             + "3 - Добавить товар\n"
@@ -101,7 +101,7 @@ public class Start {
 
        //     if (var == 7)
        //         continue;
-       // } while(var == 7);
+        } while(var != 7);
 
 
     }
